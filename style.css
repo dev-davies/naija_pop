@@ -155,7 +155,7 @@ img {
 .search-bar input {
   flex: 1;
   padding: 16px 20px;
-  border: 2px solid var(--brand-teal);
+  border: 3px solid var(--brand-teal);
   border-right: none;
   border-radius: 50px 0 0 50px;
   font-size: 16px;
@@ -172,7 +172,7 @@ img {
   padding: 16px 40px;
   background-color: var(--brand-teal);
   color: white;
-  border: 2px solid var(--brand-teal);
+  border: 3px solid var(--brand-teal);
   border-radius: 0 50px 50px 0;
   font-size: 16px;
   font-weight: 700;
@@ -288,6 +288,13 @@ img {
    ============================================ */
 .flash-deal {
   background-color: var(--pop-yellow);
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 35px,
+    rgba(0, 0, 0, 0.05) 35px,
+    rgba(0, 0, 0, 0.05) 70px
+  );
   padding: 50px 0;
   margin: 40px 0;
 }
@@ -298,7 +305,7 @@ img {
 
 .flash-title {
   font-size: 42px;
-  color: var(--text-dark);
+  color: #000000;
   margin-bottom: 20px;
   font-weight: 700;
   letter-spacing: 2px;
@@ -351,11 +358,12 @@ img {
    ============================================ */
 .product-card {
   background-color: var(--card-white);
-  border-radius: 15px;
+  border-radius: 12px;
   padding: 20px;
   box-shadow: var(--shadow-pop);
   transition: all 0.3s ease;
   max-width: 280px;
+  position: relative;
 }
 
 .product-card:hover {
@@ -391,9 +399,24 @@ img {
 }
 
 .price-new {
-  font-size: 24px;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--alert-red);
+}
+
+/* Sale Badge */
+.sale-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--alert-red);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  z-index: 10;
 }
 
 .add-to-cart-btn {
@@ -402,7 +425,7 @@ img {
   background-color: var(--brand-teal);
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 50px;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
@@ -442,15 +465,15 @@ img {
 }
 
 .bubble-icon {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   background-color: var(--card-white);
+  border: 2px solid var(--brand-teal);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 48px;
-  box-shadow: var(--shadow-pop);
+  font-size: 36px;
   transition: all 0.3s ease;
 }
 
