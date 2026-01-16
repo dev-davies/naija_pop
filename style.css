@@ -1,0 +1,104 @@
+/* ============================================
+   Naija Pop Theme
+   Vibrant, Bold, High-Energy Design
+   ============================================ */
+
+/* Google Fonts Import - Poppins (Round & Friendly) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+/* ============================================
+   CSS Variables - Color Palette
+   ============================================ */
+:root {
+  /* Background & Base Colors */
+  --bg-main: #fafafa;
+  --card-white: #ffffff;
+  --text-dark: #2d2d2d;
+
+  /* Brand Colors */
+  --brand-teal: #008080;
+  --pop-yellow: #ffd700;
+  --alert-red: #ff4500;
+
+  /* Effects */
+  --shadow-pop: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+  /* Typography */
+  --font-primary: "Poppins", sans-serif;
+}
+
+/* ============================================
+   Global Reset & Base Styles
+   ============================================ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+
+  /* Textured Background Pattern - Faint Dots */
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.05) 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+/* ============================================
+   Typography Defaults
+   ============================================ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-dark);
+}
+
+p {
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.shadow-pop {
+  box-shadow: var(--shadow-pop);
+}
