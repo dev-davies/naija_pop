@@ -1,3 +1,22 @@
+/*
+Theme Name: Novel Homes - Naija Pop
+Theme URI: https://novelhomes.com
+Author: Novel Homes
+Author URI: https://novelhomes.com
+Description: A vibrant, high-energy e-commerce theme with bold Naija Pop aesthetics. Perfect for electronics and home appliances stores.
+Version: 1.0.0
+Requires at least: 5.0
+Tested up to: 6.4
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: novel-homes
+Tags: e-commerce, woocommerce, vibrant, modern, responsive, custom-colors
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
 /* ============================================
    Naija Pop Theme
    Vibrant, Bold, High-Energy Design
@@ -152,7 +171,8 @@ img {
   max-width: 600px;
 }
 
-.search-bar input {
+.search-bar input,
+.search-bar .search-field {
   flex: 1;
   padding: 16px 20px;
   border: 3px solid var(--brand-teal);
@@ -164,11 +184,13 @@ img {
   transition: all 0.3s ease;
 }
 
-.search-bar input:focus {
+.search-bar input:focus,
+.search-bar .search-field:focus {
   border-color: var(--pop-yellow);
 }
 
-.search-btn {
+.search-btn,
+.search-bar .search-submit {
   padding: 16px 40px;
   background-color: var(--brand-teal);
   color: white;
@@ -181,9 +203,22 @@ img {
   white-space: nowrap;
 }
 
-.search-btn:hover {
+.search-btn:hover,
+.search-bar .search-submit:hover {
   background-color: #006666;
   transform: translateY(-2px);
+}
+
+/* WordPress Search Form Styling */
+.search-form {
+  display: flex;
+  flex: 1;
+  max-width: 600px;
+}
+
+.search-form label {
+  flex: 1;
+  margin: 0;
 }
 
 /* Header Icons */
@@ -561,7 +596,8 @@ img {
     gap: 15px;
   }
 
-  .search-bar {
+  .search-bar,
+  .search-form {
     max-width: 100%;
     width: 100%;
   }
@@ -589,5 +625,80 @@ img {
 
   .product-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+
+/* Shake Animation for Cart Icon */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake-animation {
+  animation: shake 0.5s ease;
+}
+
+/* ============================================
+   Mobile Menu Toggle
+   ============================================ */
+.mobile-menu-toggle {
+  display: none;
+  background-color: var(--brand-teal);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+  background-color: #006666;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .header-content {
+    position: relative;
+  }
+
+  .header-content > *:not(.mobile-menu-toggle) {
+    display: none;
+  }
+
+  .header-content.mobile-menu-active {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .header-content.mobile-menu-active > * {
+    display: flex;
+  }
+
+  .header-content.mobile-menu-active .search-bar,
+  .header-content.mobile-menu-active .search-form {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .header-content.mobile-menu-active .search-bar input,
+  .header-content.mobile-menu-active .search-field {
+    border-radius: 12px;
+    border-right: 3px solid var(--brand-teal);
+  }
+
+  .header-content.mobile-menu-active .search-btn,
+  .header-content.mobile-menu-active .search-submit {
+    border-radius: 12px;
+    margin-top: 10px;
   }
 }
